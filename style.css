@@ -7,17 +7,17 @@
 
 @font-face {
     font-family: light;
-    src: url(./AeonikTRIAL-Light.otf);
+    src: url(./fonts/AeonikTRIAL-Light.otf);
 }
 
 @font-face {
     font-family: normal;
-    src: url(./AeonikTRIAL-Regular.otf);
+    src: url(./fonts/AeonikTRIAL-Regular.otf);
 }
 
 @font-face {
     font-family: bold;
-    src: url(./AeonikTRIAL-Bold.otf);
+    src: url(./fonts/AeonikTRIAL-Bold.otf);
 }
 
 * {
@@ -371,5 +371,8 @@ section.allelem {
 
     font-weight: 600;
     
+}
+.deleteBtn:active{
+    scale: 0.9;
 }
 
