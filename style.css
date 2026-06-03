@@ -1,0 +1,375 @@
+:root {
+    --pri: #F9F7F7;
+    --sec: #DBE2EF;
+    --tri: #3F72AF;
+    --tri1: #112D4E;
+}
+
+@font-face {
+    font-family: light;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: normal;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: normal;
+    user-select: none;
+    /* cursor: none; */
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: var(--sec);
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background: var(--sec);
+}
+
+ /* Custom Cursor */
+
+/* .cursor {
+    height: 30px;
+    width: 30px;
+    background: gold;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all linear .08s;
+    z-index: 999;
+}  */
+
+/* Navbar */
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: var(--tri1);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+/* Home Cards */
+
+section.allelem {
+    width: 100%;
+    height: 100%;
+    padding: 80px 40px 40px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.elem {
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    box-shadow: 0 10px 25px rgba(17, 45, 78, .15);
+}
+
+.elem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.elem h2 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--pri);
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.elem:active {
+    scale: .97;
+}
+
+/* Full Page */
+
+.fullElem {
+    width: 100%;
+    height: 100vh;
+    background: var(--tri1);
+    color: var(--pri);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    padding: 25px;
+    overflow-y: auto;
+    display: none;
+}
+
+/* Back Button */
+
+.BackBtn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+
+    padding: 12px 22px;
+    border: none;
+    border-radius: 999px;
+
+    background: var(--tri);
+    color: var(--pri);
+
+    font-size: 1rem;
+    font-family: bold;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: .3s;
+}
+
+.BackBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(63, 114, 175, .35);
+}
+
+.BackBtn:active {
+    scale: .95;
+}
+
+/* Todo Page */
+
+.todolistPage {
+    background: var(--tri1);
+}
+
+.todolistPage h2 {
+    color: var(--pri);
+    font-family: bold;
+    font-size: 2rem;
+}
+
+.todolistPage .container {
+    width: 100%;
+    height: 85%;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+/* Cards */
+
+.todolistPage .container .addtask,
+.todolistPage .container .alltask {
+    background: var(--pri);
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+    padding: 15px;
+}
+
+.todolistPage .container .addtask {
+    width: 32%;
+    height: 100%;
+    
+}
+
+.todolistPage .container .alltask{
+    width: 68%;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 15px;
+     
+        
+}
+
+
+.todolistPage .container .alltask::-webkit-scrollbar{
+    
+    width: 8px;
+}
+
+.todolistPage .container .alltask::-webkit-scrollbar-track{
+    display: none;
+}
+
+.todolistPage .container .alltask::-webkit-scrollbar-thumb{
+    background: var(--tri);
+    border-radius: 20px;
+    border: 2px solid var(--sec);
+}
+
+
+
+
+/* Form */
+
+.todolistPage .container .addtask form {
+    width: 100%;
+    height: 100%;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input */
+
+.todolistPage .container .addtask form input {
+    width: 100%;
+    height: 70px;
+
+    padding: 18px;
+
+    border: 2px solid var(--sec);
+    border-radius: 15px;
+
+    background: var(--pri);
+    color: var(--tri1);
+
+    font-size: 1.2rem;
+
+    outline: none;
+    transition: .3s;
+}
+
+.todolistPage .container .addtask form input::placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form input:focus {
+    border-color: var(--tri);
+    box-shadow: 0 0 0 4px rgba(63, 114, 175, .15);
+}
+
+/* Textarea */
+
+.todolistPage .container .addtask form textarea {
+    flex: 1;
+
+    padding: 18px;
+
+    border: 2px solid var(--sec);
+    border-radius: 15px;
+
+    background: var(--pri);
+    color: var(--tri1);
+
+    font-size: 1rem;
+
+    resize: none;
+    outline: none;
+
+    transition: .3s;
+}
+
+.todolistPage .container .addtask form textarea::placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form textarea:focus {
+    border-color: var(--tri);
+    box-shadow: 0 0 0 4px rgba(63, 114, 175, .15);
+}
+
+/* Button */
+
+.todolistPage .container .addtask form button {
+    height: 60px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: var(--tri1);
+    color: var(--pri);
+
+    font-size: 1.2rem;
+    font-family: bold;
+
+    transition: .3s;
+}
+
+.todolistPage .container .addtask form button:hover {
+    background: var(--tri);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(63, 114, 175, .35);
+}
+
+.todolistPage .container .addtask form button:active {
+    transform: scale(.96);
+}
+
+
+.todolistPage .container .alltask .task{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 15px;
+    margin-bottom: 15px;
+
+    background: var(--sec);
+    border-radius: 15px;
+    
+    
+}
+
+.todolistPage .container .alltask .checkBox{
+    width: 25px;
+    height: 25px;
+
+    border: 2px solid var(--tri1);
+    border-radius: 5px;
+
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.task h5{
+    flex: 1;
+    font-size: 18px;
+    color: var(--tri1);
+}
+
+.deleteBtn{
+    padding: 8px 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #ff4d4d;
+    color: var(--pri);
+
+    font-weight: 600;
+    
+}
+
