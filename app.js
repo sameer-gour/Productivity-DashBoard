@@ -163,3 +163,19 @@ dpbox_input.forEach((elem) => {
 }
 
 DailyPlaner();
+
+
+
+async function fatchQuets() {
+  let quotes = document.querySelector('.quoteBody p')
+  let authors = document.querySelector('.authorName h5')
+  
+
+let respose =  await fetch("https://random-quotes-freeapi.vercel.app/api/random")
+let data = await respose.json()
+quotes.innerHTML=data.quote
+authors.innerHTML = data.author
+
+
+}
+fatchQuets()

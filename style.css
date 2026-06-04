@@ -19,17 +19,21 @@
 
 @font-face {
     font-family: light;
-    src: url(./fonts/AeonikTRIAL-Light.otf);
+    src: url(/fonts/AeonikTRIAL-Light.otf);
 }
 
 @font-face {
     font-family: normal;
-    src: url(./fonts/AeonikTRIAL-Regular.otf);
+    src: url(/fonts/AeonikTRIAL-Regular.otf);
+}
+@font-face {
+    font-family: italic;
+    src: url(/fonts/AeonikTRIAL-BoldItalic.otf);
 }
 
 @font-face {
     font-family: bold;
-    src: url(./fonts/AeonikTRIAL-Bold.otf);
+    src: url(/fonts/AeonikTRIAL-Bold.otf);
 }
 
 * {
@@ -480,3 +484,175 @@ section.allelem {
 .dailyPlannerPage .dpbox::-webkit-scrollbar-track {
     background: transparent;
 }
+
+.motivationPage {
+    /* position: relative;
+    min-height: 100vh; */
+
+    background: linear-gradient(
+        135deg,
+        var(--tri1) 0%,
+        #1c4c84 50%,
+        var(--tri) 100%
+    );
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.quoteCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 700px;
+    max-width: 95vw;
+
+    border-radius: 28px;
+    padding: 10px;
+
+    background: rgba(249,247,247,0.08);
+    border: 1px solid rgba(249,247,247,.15);
+
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(15px);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.25),
+        inset 0 1px 1px rgba(255,255,255,.1);
+}
+
+.quoteCard::before {
+    content: "";
+    position: absolute;
+
+    top: -50%;
+    left: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,.04),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    pointer-events: none;
+}
+
+.quoteHeader {
+    background: var(--tri1);
+
+    border-radius: 20px 20px 0 0;
+
+    padding: 18px 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quoteHeader h3 {
+    color: var(--pri);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.quoteBody {
+    position: relative;
+
+    background: linear-gradient(
+        180deg,
+        var(--pri),
+        var(--sec)
+    );
+
+    min-height: 180px;
+
+    padding: 30px 25px;
+
+    border-radius: 0 0 20px 20px;
+
+    overflow: hidden;
+}
+
+.quoteText {
+    color: var(--tri1);
+
+    font-size: 1.4rem;
+    line-height: 1.7;
+
+    font-style: italic;
+    font-weight: 500;
+
+    margin: 0;
+    padding-right: 40px;
+}
+
+.authorName {
+    position: absolute;
+    bottom: 4%;
+    right: 2%;
+}
+
+.authorName h5 {
+    margin: 0;
+    
+    color: var(--tri);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.quoteMark {
+    position: absolute;
+
+    right: 15px;
+    bottom: -15px;
+
+    font-size: 6rem;
+    font-weight: bold;
+
+    color: rgba(63,114,175,.15);
+
+    pointer-events: none;
+}
+/* .BackBtn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--tri);
+    color: var(--pri);
+
+    font-size: .95rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.BackBtn:hover{
+    background: var(--tri1);
+    transform: translateY(-2px);
+}
+
+.BackBtn:active{
+    transform: translateY(0);
+}
+ */
