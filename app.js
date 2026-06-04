@@ -56,7 +56,7 @@ function todoapk() {
         data-index="${index}"
         ${elem.completed ? "checked" : ""}>
 
-      <h5 style="text-decoration:${elem.completed ? "line-through" : "none"}">
+      <h5 style="text-decoration:${elem.completed ? "line-through " : "none"}">
         ${elem.task}
       </h5>
 
@@ -94,18 +94,15 @@ function todoapk() {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (
-      TaskInput.value.trim() === ""
-      
-    ) {
+    if (TaskInput.value.trim() === "") {
       return;
     }
 
     currentTask.push({
-  task: TaskInput.value,
-  details: TaskDetailsInput.value,
-  completed: false
-});
+      task: TaskInput.value,
+      details: TaskDetailsInput.value,
+      completed: false,
+    });
 
     TaskInput.value = "";
     TaskDetailsInput.value = "";
@@ -115,3 +112,54 @@ function todoapk() {
 }
 
 todoapk();
+
+function DailyPlaner() {
+  
+let dpboxInputData = JSON.parse(localStorage.getItem("dayPlanner")) || {};
+
+let hours = Array.from({ length: 20 }, (_, idx) => {
+  let start = (5 + idx) % 24;
+  let end = (start + 1) % 24;
+
+  let startPeriod = start >= 12 ? "PM" : "AM";
+  let endPeriod = end >= 12 ? "PM" : "AM";
+
+  start = start % 12 || 12;
+  end = end % 12 || 12;
+
+  return `${start}:00 ${startPeriod} - ${end}:00 ${endPeriod}`;
+});
+
+let wholeDaySum = "";
+
+hours.forEach((elem, idx) => {
+  let saveData = dpboxInputData[idx] || "";
+
+  wholeDaySum += `
+    <div class="dpbline">
+      <h5>${elem}</h5>
+      <input
+        id="${idx}"
+        type="text"
+        placeholder="..."
+        value="${saveData}"
+      >
+    </div>
+  `;
+});
+
+document.querySelector(".dpbox").innerHTML = wholeDaySum;
+
+let dpbox_input = document.querySelectorAll(".dpbox input");
+
+dpbox_input.forEach((elem) => {
+  elem.addEventListener("input", () => {
+    dpboxInputData[elem.id] = elem.value;
+
+    localStorage.setItem("dayPlanner", JSON.stringify(dpboxInputData));
+  });
+});
+
+}
+
+DailyPlaner();
