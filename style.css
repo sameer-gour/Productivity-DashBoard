@@ -15,6 +15,9 @@
     --white: #ffffff;
     --text: #1e293b;
     --shadow: rgba(17, 45, 78, 0.12);
+    --blue: blue;
+    --green:green;
+    --black:black;
 }
 
 @font-face {
@@ -80,10 +83,126 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    height: 60px;
+    height: 50px;
     background: var(--tri1);
     backdrop-filter: blur(10px);
     z-index: 100;
+}
+
+.nav-in {
+
+    display: flex;
+    background-color: var(--tri2);
+    
+    
+    align-items: center;
+    
+    
+    justify-content: space-between;
+    padding: 10px 20px;
+    
+    color: var(--pri);
+
+}
+
+.nav-in h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.theme {
+
+    background-color: var(--pri);
+    padding: 10px 10px;
+    border-radius: 10px;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+    cursor: pointer;
+
+}
+
+.theme h4 {
+    color: var(--tri1);
+    font-weight: 700;
+    font-size: 15px;
+    pointer-events: none;
+    text-transform: capitalize;
+    
+}
+
+.theme:active {
+    scale: 0.96;
+}
+
+
+.allelem header {
+    width: 100%;
+    background-image: url(https://i.pinimg.com/1200x/91/71/50/917150877ef5250ff447ec47deb106d2.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 35px 50px;
+    color: var(--pri);
+}
+
+header .header1 h1 {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+header .header1 h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+header .header1 h4 {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+header .header2 h2 {
+    font-weight: 700;
+    font-size: 70px;
+}
+
+header .header2 h4 {
+    font-weight: 500;
+    margin-top: -10px;
+    margin-bottom: 45px;
+    font-size: 40px;
+}
+
+header .header2 h3 {
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+
+
+.allelem .allFeatures {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 /* Home Cards */
@@ -624,35 +743,57 @@ section.allelem {
 
     pointer-events: none;
 }
-/* .BackBtn{
-    position: fixed;
-    top: 20px;
-    left: 20px;
 
-    padding: 10px 18px;
 
+.pomodoroPage h1 {
+    font-size: 40px;
+    text-transform: capitalize;
+    
+}
+
+.pomodoroPage .pomo-timer {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.pomo-timer h1 {
+    font-size: 170px;
+}
+
+.pomo-timer button {
+    background-color: var(--pri);
+    padding: 15px 40px;
+    font-size: 32px;
+    margin: 10px;
+    border-radius: 5px;
     border: none;
-    border-radius: 12px;
-
-    background: var(--tri);
-    color: var(--pri);
-
-    font-size: .95rem;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition: all .3s ease;
-
-    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    -webkit-box-shadow: 7px 7px 0px var(--black);
+    -webkit-transition: all ease 0.1s;
+    -o-transition: all ease 0.1s;
+    transition: all ease 0.1s;
+    font-weight: 700;
 }
 
-.BackBtn:hover{
-    background: var(--tri1);
-    transform: translateY(-2px);
+.pomo-timer button:active {
+    -webkit-box-shadow: 0px 0px 0px var(--black);
+    box-shadow: 0px 0px 0px var(--black);
+
 }
 
-.BackBtn:active{
-    transform: translateY(0);
+.pomodoroPage .session {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    background-color: var(--green);
+    padding: 15px 30px;
+    font-size: 30px;
+    border-radius: 5px;
 }
- */
