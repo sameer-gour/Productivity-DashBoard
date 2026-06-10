@@ -1,14 +1,14 @@
-// // custer cursor
-// function cursor() {
+// custer cursor
+function cursor() {
 
-// // couser custem
-// var cursor = document.querySelector(".cursor");
-// document.addEventListener("mousemove", function (dets) {
-//   cursor.style.left = dets.x + "px";
-//   cursor.style.top = dets.y + "px";
-// });
-// }
-// cursor();
+// couser custem
+var cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", function (dets) {
+  cursor.style.left = dets.x + "px";
+  cursor.style.top = dets.y + "px";
+});
+}
+cursor();
 
 //new page fechers
 function OpenPage() {
@@ -176,6 +176,7 @@ async function fatchQuets() {
 }
 fatchQuets();
 
+
 function pomodoroTimer() {
 
 
@@ -213,7 +214,7 @@ function pomodoroTimer() {
                     session.style.backgroundColor = 'var(--blue)'
                     totalSeconds = 5 * 60
                 }
-            }, 10)
+            }, 1000)
         } else {
 
 
@@ -229,7 +230,7 @@ function pomodoroTimer() {
                     session.style.backgroundColor = 'var(--green)'
                     totalSeconds = 25 * 60
                 }
-            }, 10)
+            }, 1000)
         }
 
     }
@@ -254,7 +255,23 @@ function pomodoroTimer() {
 pomodoroTimer()
 
 
+function Mynotes() {
+    const noteArea = document.querySelector("#note");
 
+    
+    const savedNote = localStorage.getItem("myNote");
+
+    if (savedNote) {
+        noteArea.value = savedNote;
+    }
+
+    
+    noteArea.addEventListener("input", () => {
+        localStorage.setItem("myNote", noteArea.value);
+    });
+}
+
+Mynotes();
 
 function weatherFunctionality() {
 
@@ -308,10 +325,10 @@ function weatherFunctionality() {
         header1Date.innerHTML = `${tarik} ${month}, ${year}`
 
         if (hours > 12) {
-            header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
+            header1Time.innerHTML = `${dayOfWeek} <br/> ${String(hours - 12).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
 
         } else {
-            header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
+            header1Time.innerHTML = `${dayOfWeek}<br/> ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
         }
     }
 
@@ -324,38 +341,54 @@ function weatherFunctionality() {
 weatherFunctionality()
 
 
-
 function changeTheme() {
 
-    var theme = document.querySelector('.theme')
-    var rootElement = document.documentElement
+    const themeBtn = document.querySelector('.theme');
+    const root = document.documentElement;
 
-    var flag = 0
-    theme.addEventListener('click', function () {
-
-        if (flag == 0) {
-            rootElement.style.setProperty('--pri', '#222831')
-            rootElement.style.setProperty('--sec', '#393E46')
-            rootElement.style.setProperty('--tri1', '#00ADB5')
-            rootElement.style.setProperty('--tri2', '#EEEEEE')
-            flag = 1
-        } else if (flag == 1) {
-            rootElement.style.setProperty('--pri', '#39B1D1')
-            rootElement.style.setProperty('--sec', '#D6FB61')
-            rootElement.style.setProperty('--tri1', '#F6850C')
-            rootElement.style.setProperty('--tri2', '#DE3E3E')
-            flag = 2
-        } else if (flag == 2) {
-            rootElement.style.setProperty('--pri', '#F9F7F7')
-            rootElement.style.setProperty('--sec', '#DBE2EF')
-            rootElement.style.setProperty('--tri1', '#3F72AF')
-            rootElement.style.setProperty('--tri2', '#112D4E')
-            flag = 0
+    const themes = [
+        {
+            pri: '#F9F7F7',
+            sec: '#DBE2EF',
+            tri: '#3F72AF',
+            tri1: '#112D4E'
+        },
+        {
+            pri: '#222831',
+            sec: '#393E46',
+            tri: '#EEEEEE',
+            tri1: '#00ADB5'
+        },
+        {
+            pri: '#39B1D1',
+            sec: '#D6FB61',
+            tri: '#DE3E3E',
+            tri1: '#F6850C'
         }
+    ];
 
-    }) 
+    let currentTheme = Number(localStorage.getItem('theme')) || 0;
 
+    applyTheme(currentTheme);
+
+    themeBtn.addEventListener('click', () => {
+
+        currentTheme = (currentTheme + 1) % themes.length;
+
+        applyTheme(currentTheme);
+
+        localStorage.setItem('theme', currentTheme);
+    });
+
+    function applyTheme(index) {
+
+        const theme = themes[index];
+
+        root.style.setProperty('--pri', theme.pri);
+        root.style.setProperty('--sec', theme.sec);
+        root.style.setProperty('--tri', theme.tri);
+        root.style.setProperty('--tri1', theme.tri1);
+    }
 }
 
-changeTheme()
-
+changeTheme();

@@ -1,23 +1,16 @@
-/* :root {
-    --pri: #F9F7F7;
-    --sec: #DBE2EF;
-    --tri: #3F72AF;
-    --tri1: #112D4E;
-} */
-
 :root {
     --pri: #F9F7F7;
     --sec: #DBE2EF;
     --tri: #3F72AF;
     --tri1: #112D4E;
 
-    /* Extra colors */
+
     --white: #ffffff;
     --text: #1e293b;
     --shadow: rgba(17, 45, 78, 0.12);
     --blue: blue;
-    --green:green;
-    --black:black;
+    --green: green;
+    --black: black;
 }
 
 @font-face {
@@ -29,6 +22,7 @@
     font-family: normal;
     src: url(/fonts/AeonikTRIAL-Regular.otf);
 }
+
 @font-face {
     font-family: italic;
     src: url(/fonts/AeonikTRIAL-BoldItalic.otf);
@@ -42,10 +36,15 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: normal;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
-    /* cursor: none; */
+    cursor: none;
+
 }
 
 html,
@@ -64,21 +63,24 @@ body {
     background: var(--sec);
 }
 
- /* Custom Cursor */
 
-/* .cursor {
+
+.cursor {
     height: 30px;
     width: 30px;
     background: gold;
     border-radius: 50%;
     position: fixed;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     pointer-events: none;
+    -webkit-transition: all linear .08s;
     transition: all linear .08s;
     z-index: 999;
-}  */
+}
 
-/* Navbar */
+
 
 nav {
     position: fixed;
@@ -91,16 +93,32 @@ nav {
 
 .nav-in {
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
     background-color: var(--tri2);
-    
-    
+
+
+    -webkit-box-align: center;
+
+
+    -ms-flex-align: center;
+
+
     align-items: center;
-    
-    
+
+
+    -webkit-box-pack: justify;
+
+
+    -ms-flex-pack: justify;
+
+
     justify-content: space-between;
     padding: 10px 20px;
-    
+
     color: var(--pri);
 
 }
@@ -116,7 +134,6 @@ nav {
     padding: 10px 10px;
     border-radius: 10px;
     -webkit-transition: all ease 0.2s;
-    -o-transition: all ease 0.2s;
     transition: all ease 0.2s;
     cursor: pointer;
 
@@ -128,7 +145,7 @@ nav {
     font-size: 15px;
     pointer-events: none;
     text-transform: capitalize;
-    
+
 }
 
 .theme:active {
@@ -141,7 +158,7 @@ nav {
     background-image: url(https://i.pinimg.com/1200x/91/71/50/917150877ef5250ff447ec47deb106d2.jpg);
     background-size: cover;
     background-position: center;
-    
+
     border-radius: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -152,36 +169,36 @@ nav {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 35px 50px;
+    padding: 25px 40px;
     color: var(--pri);
 }
 
 header .header1 h1 {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 700;
     margin-bottom: 60px;
 }
 
 header .header1 h2 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
 }
 
 header .header1 h4 {
     font-weight: 500;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 header .header2 h2 {
     font-weight: 700;
-    font-size: 70px;
+    font-size: 50px;
 }
 
 header .header2 h4 {
     font-weight: 500;
     margin-top: -10px;
     margin-bottom: 45px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 header .header2 h3 {
@@ -202,18 +219,25 @@ header .header2 h3 {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
-/* Home Cards */
+
 
 section.allelem {
     width: 100%;
     height: 100%;
     padding: 80px 40px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 40px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
 }
 
@@ -224,12 +248,14 @@ section.allelem {
     overflow: hidden;
     position: relative;
     border: none;
+    -webkit-box-shadow: 0 10px 25px rgba(17, 45, 78, .15);
     box-shadow: 0 10px 25px rgba(17, 45, 78, .15);
 }
 
 .elem img {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -246,7 +272,7 @@ section.allelem {
     scale: .97;
 }
 
-/* Full Page */
+
 
 .fullElem {
     width: 100%;
@@ -262,7 +288,7 @@ section.allelem {
     display: none;
 }
 
-/* Back Button */
+
 
 .BackBtn {
     position: absolute;
@@ -279,15 +305,26 @@ section.allelem {
     font-size: 1rem;
     font-family: bold;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 8px;
+
+    -webkit-transition: .3s;
 
     transition: .3s;
 }
 
 .BackBtn:hover {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
     transform: translateY(-2px);
+    -webkit-box-shadow: 0 10px 20px rgba(63, 114, 175, .35);
     box-shadow: 0 10px 20px rgba(63, 114, 175, .35);
 }
 
@@ -295,7 +332,7 @@ section.allelem {
     scale: .95;
 }
 
-/* Todo Page */
+
 
 .todolistPage {
     background: var(--tri1);
@@ -312,48 +349,56 @@ section.allelem {
     height: 85%;
     margin-top: 30px;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 25px;
 }
 
-/* Cards */
+
 
 .todolistPage .container .addtask,
 .todolistPage .container .alltask {
     background: var(--pri);
     border-radius: 25px;
-    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
     padding: 15px;
 }
 
 .todolistPage .container .addtask {
     width: 32%;
     height: 100%;
-    
+
 }
 
-.todolistPage .container .alltask{
+.todolistPage .container .alltask {
     width: 68%;
     height: 100%;
     overflow: auto;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 15px;
-     
-        
+
+
 }
 
 
-.todolistPage .container .alltask::-webkit-scrollbar{
-    
+.todolistPage .container .alltask::-webkit-scrollbar {
+
     width: 8px;
 }
 
-.todolistPage .container .alltask::-webkit-scrollbar-track{
+.todolistPage .container .alltask::-webkit-scrollbar-track {
     display: none;
 }
 
-.todolistPage .container .alltask::-webkit-scrollbar-thumb{
+.todolistPage .container .alltask::-webkit-scrollbar-thumb {
     background: var(--tri);
     border-radius: 20px;
     border: 2px solid var(--sec);
@@ -362,7 +407,7 @@ section.allelem {
 
 
 
-/* Form */
+
 
 .todolistPage .container .addtask form {
     width: 100%;
@@ -370,12 +415,19 @@ section.allelem {
 
     padding: 25px;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Input */
+
 
 .todolistPage .container .addtask form input {
     width: 100%;
@@ -392,7 +444,24 @@ section.allelem {
     font-size: 1.2rem;
 
     outline: none;
+    -webkit-transition: .3s;
     transition: .3s;
+}
+
+.todolistPage .container .addtask form input::-webkit-input-placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form input::-moz-placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form input:-ms-input-placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form input::-ms-input-placeholder {
+    color: #7f8ea3;
 }
 
 .todolistPage .container .addtask form input::placeholder {
@@ -401,12 +470,15 @@ section.allelem {
 
 .todolistPage .container .addtask form input:focus {
     border-color: var(--tri);
+    -webkit-box-shadow: 0 0 0 4px rgba(63, 114, 175, .15);
     box-shadow: 0 0 0 4px rgba(63, 114, 175, .15);
 }
 
-/* Textarea */
+
 
 .todolistPage .container .addtask form textarea {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 
     padding: 18px;
@@ -422,7 +494,25 @@ section.allelem {
     resize: none;
     outline: none;
 
+    -webkit-transition: .3s;
+
     transition: .3s;
+}
+
+.todolistPage .container .addtask form textarea::-webkit-input-placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form textarea::-moz-placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form textarea:-ms-input-placeholder {
+    color: #7f8ea3;
+}
+
+.todolistPage .container .addtask form textarea::-ms-input-placeholder {
+    color: #7f8ea3;
 }
 
 .todolistPage .container .addtask form textarea::placeholder {
@@ -431,10 +521,11 @@ section.allelem {
 
 .todolistPage .container .addtask form textarea:focus {
     border-color: var(--tri);
+    -webkit-box-shadow: 0 0 0 4px rgba(63, 114, 175, .15);
     box-shadow: 0 0 0 4px rgba(63, 114, 175, .15);
 }
 
-/* Button */
+
 
 .todolistPage .container .addtask form button {
     height: 60px;
@@ -448,25 +539,38 @@ section.allelem {
     font-size: 1.2rem;
     font-family: bold;
 
+    -webkit-transition: .3s;
+
     transition: .3s;
 }
 
 .todolistPage .container .addtask form button:hover {
     background: var(--tri);
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
     transform: translateY(-3px);
+    -webkit-box-shadow: 0 10px 25px rgba(63, 114, 175, .35);
     box-shadow: 0 10px 25px rgba(63, 114, 175, .35);
 }
 
 .todolistPage .container .addtask form button:active {
+    -webkit-transform: scale(.96);
+    -ms-transform: scale(.96);
     transform: scale(.96);
 }
 
 
-.todolistPage .container .alltask .task{
+.todolistPage .container .alltask .task {
     height: 70px;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     gap: 15px;
 
@@ -475,11 +579,11 @@ section.allelem {
 
     background: var(--sec);
     border-radius: 15px;
-    
-    
+
+
 }
 
-.todolistPage .container .alltask .checkBox{
+.todolistPage .container .alltask .checkBox {
     width: 25px;
     height: 25px;
 
@@ -487,16 +591,19 @@ section.allelem {
     border-radius: 5px;
 
     background: transparent;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
 }
 
-.task h5{
+.task h5 {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     font-size: 18px;
     color: var(--tri1);
 }
 
-.deleteBtn{
+.deleteBtn {
     padding: 8px 15px;
 
     border: none;
@@ -506,9 +613,10 @@ section.allelem {
     color: var(--pri);
 
     font-weight: 600;
-    
+
 }
-.deleteBtn:active{
+
+.deleteBtn:active {
     scale: 0.9;
 }
 
@@ -517,6 +625,7 @@ section.allelem {
     height: 100%;
     background-color: var(--tri1);
     padding: 20px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -534,11 +643,17 @@ section.allelem {
     background: var(--pri);
     border-radius: 18px;
     padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 15px;
     overflow: auto;
+    -webkit-box-shadow: 0 10px 30px var(--shadow);
     box-shadow: 0 10px 30px var(--shadow);
 }
 
@@ -550,13 +665,18 @@ section.allelem {
     border-radius: 14px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .dailyPlannerPage .dpbox .dpbline:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .dailyPlannerPage .dpbox .dpbline h5 {
@@ -582,13 +702,33 @@ section.allelem {
     text-transform: capitalize;
 }
 
+.dailyPlannerPage .dpbox .dpbline input::-webkit-input-placeholder {
+    color: #94a3b8;
+}
+
+.dailyPlannerPage .dpbox .dpbline input::-moz-placeholder {
+    color: #94a3b8;
+}
+
+.dailyPlannerPage .dpbox .dpbline input:-ms-input-placeholder {
+    color: #94a3b8;
+}
+
+.dailyPlannerPage .dpbox .dpbline input::-ms-input-placeholder {
+    color: #94a3b8;
+}
+
 .dailyPlannerPage .dpbox .dpbline input::placeholder {
     color: #94a3b8;
 }
-.dailyPlannerPage .dpbox .dpbline:focus-within{
+
+.dailyPlannerPage .dpbox .dpbline:focus-within {
     border-left-color: #5b9cff;
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
     transform: translateY(-2px);
-    box-shadow: 0 0 0 3px rgba(63,114,175,0.15);
+    -webkit-box-shadow: 0 0 0 3px rgba(63, 114, 175, 0.15);
+    box-shadow: 0 0 0 3px rgba(63, 114, 175, 0.15);
 }
 
 .dailyPlannerPage .dpbox::-webkit-scrollbar {
@@ -605,17 +745,15 @@ section.allelem {
 }
 
 .motivationPage {
-    /* position: relative;
-    min-height: 100vh; */
 
-    background: linear-gradient(
-        135deg,
-        var(--tri1) 0%,
-        #1c4c84 50%,
-        var(--tri) 100%
-    );
+
+    background: linear-gradient(135deg,
+            var(--tri1) 0%,
+            #1c4c84 50%,
+            var(--tri) 100%);
 
     padding: 20px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -623,6 +761,8 @@ section.allelem {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
     width: 700px;
@@ -631,17 +771,21 @@ section.allelem {
     border-radius: 28px;
     padding: 10px;
 
-    background: rgba(249,247,247,0.08);
-    border: 1px solid rgba(249,247,247,.15);
+    background: rgba(249, 247, 247, 0.08);
+    border: 1px solid rgba(249, 247, 247, .15);
 
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(15px);
 
     overflow: hidden;
 
+    -webkit-box-shadow:
+        0 20px 40px rgba(0, 0, 0, .25),
+        inset 0 1px 1px rgba(255, 255, 255, .1);
+
     box-shadow:
-        0 20px 40px rgba(0,0,0,.25),
-        inset 0 1px 1px rgba(255,255,255,.1);
+        0 20px 40px rgba(0, 0, 0, .25),
+        inset 0 1px 1px rgba(255, 255, 255, .1);
 }
 
 .quoteCard::before {
@@ -654,12 +798,14 @@ section.allelem {
     width: 200%;
     height: 200%;
 
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(255,255,255,.04),
-        transparent
-    );
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(255, 255, 255, .04),
+            transparent);
+
+    -webkit-transform: rotate(25deg);
+
+    -ms-transform: rotate(25deg);
 
     transform: rotate(25deg);
 
@@ -673,8 +819,16 @@ section.allelem {
 
     padding: 18px 22px;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -688,11 +842,9 @@ section.allelem {
 .quoteBody {
     position: relative;
 
-    background: linear-gradient(
-        180deg,
-        var(--pri),
-        var(--sec)
-    );
+    background: linear-gradient(180deg,
+            var(--pri),
+            var(--sec));
 
     min-height: 180px;
 
@@ -724,7 +876,7 @@ section.allelem {
 
 .authorName h5 {
     margin: 0;
-    
+
     color: var(--tri);
     font-size: 1rem;
     font-style: italic;
@@ -739,7 +891,7 @@ section.allelem {
     font-size: 6rem;
     font-weight: bold;
 
-    color: rgba(63,114,175,.15);
+    color: rgba(63, 114, 175, .15);
 
     pointer-events: none;
 }
@@ -748,7 +900,7 @@ section.allelem {
 .pomodoroPage h1 {
     font-size: 40px;
     text-transform: capitalize;
-    
+
 }
 
 .pomodoroPage .pomo-timer {
@@ -774,7 +926,6 @@ section.allelem {
     border: none;
     -webkit-box-shadow: 7px 7px 0px var(--black);
     -webkit-transition: all ease 0.1s;
-    -o-transition: all ease 0.1s;
     transition: all ease 0.1s;
     font-weight: 700;
 }
@@ -796,4 +947,283 @@ section.allelem {
     padding: 15px 30px;
     font-size: 30px;
     border-radius: 5px;
+}
+
+.dailyGolsPage h1 {
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.dailyGolsPage .notes textarea {
+    margin-top: 20px;
+    width: 100%;
+    height: 80vh;
+    resize: none;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: var(--pri);
+    color: var(--tri1);
+    border: none;
+    outline: none;
+}
+
+
+@media (max-width: 1024px) {
+
+    .nav-in h2 {
+        font-size: 24px;
+    }
+
+    .allelem {
+        padding: 80px 20px 20px;
+    }
+
+    .allelem header {
+        padding: 25px;
+    }
+
+    header .header1 h1 {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    header .header2 h2 {
+        font-size: 50px;
+    }
+
+    header .header2 h4 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .allFeatures {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .elem {
+        width: 48%;
+    }
+
+    .todolistPage .container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .todolistPage .container .addtask,
+    .todolistPage .container .alltask {
+        width: 100%;
+    }
+
+    .todolistPage .container .addtask {
+        height: 400px;
+    }
+
+    .dailyPlannerPage .dpbox .dpbline {
+        width: 100%;
+    }
+
+    .quoteCard {
+        width: 90%;
+    }
+
+    .pomo-timer h1 {
+        font-size: 120px;
+    }
+
+    .pomo-timer button {
+        font-size: 24px;
+        padding: 12px 28px;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+
+    nav {
+        height: 8vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 50px;
+
+    }
+
+    .nav-in {
+        padding: 15px;
+
+    }
+
+    .nav-in h2 {
+        font-size: 20px;
+    }
+
+    .theme {
+        width: 20%;
+    }
+
+    .theme h4 {
+        text-align: center;
+        font-size: 8px;
+    }
+
+    section.allelem {
+        padding: 120px 15px 20px;
+
+    }
+
+    .allelem header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    header .header1 h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    header .header1 h2,
+    header .header1 h4 {
+        font-size: 16px;
+    }
+
+    header .header2 h2 {
+        font-size: 42px;
+    }
+
+    header .header2 h4 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    header .header2 h3 {
+        font-size: 14px;
+    }
+
+    .allFeatures {}
+
+    .elem {
+        width: 100px;
+        height: 100px;
+    }
+
+    .elem h2 {
+        font-size: .8rem;
+    }
+
+    .BackBtn {
+        top: 15px;
+        right: 15px;
+        padding: 10px 18px;
+    }
+
+    .fullElem {
+        padding: 15px;
+    }
+
+    .todolistPage h2 {
+        margin-top: 50px;
+        font-size: 1.5rem;
+    }
+
+    .todolistPage .container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .todolistPage .container .addtask,
+    .todolistPage .container .alltask {
+        width: 100%;
+    }
+
+    .todolistPage .container .addtask {
+        height: 420px;
+    }
+
+    .todolistPage .container .alltask {
+        height: 500px;
+    }
+
+    .dailyPlannerPage h1 {
+        margin-top: 50px;
+        font-size: 1.5rem;
+    }
+
+    .dailyPlannerPage .dpbox {
+        height: auto;
+        padding: 15px;
+    }
+
+    .dailyPlannerPage .dpbox .dpbline {
+        width: 100%;
+        height: 70px;
+    }
+
+    .quoteCard {
+        position: relative;
+        top: auto;
+        left: auto;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .quoteText {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .quoteMark {
+        font-size: 4rem;
+    }
+
+    .pomodoroPage h1 {
+        margin-top: 50px;
+        font-size: 28px;
+    }
+
+    .pomodoroPage .session {
+        top: 18%;
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .pomodoroPage .pomo-timer {
+        width: 100%;
+    }
+
+    .pomo-timer h1 {
+        font-size: 70px;
+    }
+
+    .pomo-timer button {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+        font-size: 18px;
+        padding: 12px;
+    }
 }
